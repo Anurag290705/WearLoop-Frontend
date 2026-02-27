@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WearLoop</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+  <div class="page-transition"></div>
+
+<!-- Loader (NOW INSIDE BODY) -->
+<div id="loader">
+  <div class="spinner"></div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top custom-navbar">
+  <div class="container">
+
+    <a class="navbar-brand fw-bold fs-4 text-white" href="#">
+      <span style="color:#ff6b00;">♻</span> Wear<span style="color:#ff6b00;">Loop</span>
+    </a>
+
+    <button class="navbar-toggler border-0 text-white" type="button"
+      data-bs-toggle="collapse" data-bs-target="#navbarContent">
+      ☰
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav ms-auto align-items-center">
+
+        <li class="nav-item mx-3">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+
+        <li class="nav-item mx-3">
+          <a class="nav-link" href="about.html">About</a>
+        </li>
+
+        <li class="nav-item mx-3">
+          <a class="nav-link" href="login.html">Login</a>
+        </li>
+
+        <li class="nav-item mx-3">
+          <a href="register.html" class="btn btn-nav-register">
+            Register
+          </a>
+        </li>
+
+        <li class="nav-item mx-3">
+          <a class="nav-link text-warning fw-bold" href="admin.html">
+            Admin
+          </a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO SECTION -->
+<section class="hero-image">
+  <div class="hero-overlay">
+    <div class="hero-shapes">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+    <div class="container text-center text-white hero-content">
+      
+      <h1 class="hero-title">
+        Let’s Spread Kindness
+      </h1>
+
+      <p class="hero-subtitle">
+        We deliver your donated clothes to the people who truly need them.
+      </p>
+
+      <a href="donate.html" class="btn btn-hero">Donate Now →</a>
+
+
+    </div>
+  </div>
+</section>
+
+<!-- DONATION PROGRESS -->
+
+<section class="progress-section py-5 text-center">
+  <div class="container">
+    <h3 class="fw-bold mb-4">Monthly Donation Goal</h3>
+
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" style="width: 0%" id="donationProgress">
+        0%
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- DONATE CATEGORY-->
+
+<section class="donate-category py-5 text-center">
+  <div class="container">
+
+    <h2 class="fw-bold mb-5 donate-title reveal">
+      DONATE ALMOST ANYTHING
+    </h2>
+
+    <div class="row justify-content-center">
+
+      <!-- Clothes -->
+      <div class="col-md-4 mb-4 reveal">
+        <a href="donate.html" class="donate-card-link">
+          <div class="donate-card">
+            <div class="donate-circle">
+              <i class="fa-solid fa-shirt"></i>
+            </div>
+            <h5>Clothes</h5>
+          </div>
+        </a>
+      </div>
+      
+      <!-- Shoes -->
+      <div class="col-md-4 mb-4 reveal">
+        <a href="donate.html" class="donate-card-link">
+          <div class="donate-card">
+            <div class="donate-circle">
+              <i class="fa-solid fa-shoe-prints"></i>
+            </div>
+            <h5>Shoes</h5>
+          </div>
+        </a>
+      </div>
+
+      <!-- Bags -->
+      <div class="col-md-4 mb-4 reveal">
+        <a href="donate.html" class="donate-card-link">
+          <div class="donate-card">
+            <div class="donate-circle">
+              <i class="fa-solid fa-bag-shopping"></i>
+            </div>
+            <h5>Bags</h5>
+          </div>
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!--NGO-->
+
+<section class="partners py-5 text-center">
+  <div class="container">
+    <h2 class="fw-bold mb-4">Our Trusted NGO Partners</h2>
+
+    <div class="logo-slider">
+      <div class="slide-track">
+        <img src="https://dummyimage.com/150x60/000/fff&text=NGO+1">
+        <img src="https://dummyimage.com/150x60/000/fff&text=NGO+2">
+        <img src="https://dummyimage.com/150x60/000/fff&text=NGO+3">
+        <img src="https://dummyimage.com/150x60/000/fff&text=NGO+4">
+        <img src="https://dummyimage.com/150x60/000/fff&text=NGO+5">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- FEATURES -->
+<section class="features-section py-5">
+  <div class="container text-center">
+    <h2 class="mb-5 fw-bold">Why Choose WearLoop?</h2>
+
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="feature-card p-4 shadow">
+          <h4>Easy Donation</h4>
+          <p>Schedule pickup in just a few clicks.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="feature-card p-4 shadow">
+          <h4>Verified NGOs</h4>
+          <p>We partner with trusted organizations.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="feature-card p-4 shadow">
+          <h4>Eco Friendly</h4>
+          <p>Reduce textile waste and help the planet.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--WHY DONATE-->
+
+<section class="why-donate py-5">
+  <div class="container text-center">
+    
+    <h2 class="section-title fw-bold mb-5">
+      WHY DONATE THROUGH WEARLOOP
+    </h2>
+
+    <div class="row g-4">
+
+      <div class="col-md-4">
+        <div class="why-card">
+          <div class="icon-circle">
+            <i class="bi bi-hand-thumbs-up-fill"></i>
+          </div>
+          <h5>Super Convenient</h5>
+          <p>
+            Donate reusable items from your home.
+            Doorstep pickup available.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="why-card">
+          <div class="icon-circle">
+            <i class="bi bi-emoji-smile-fill"></i>
+          </div>
+          <h5>Feel Good Factor</h5>
+          <p>
+            Giving creates happiness and a positive
+            impact on lives.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="why-card">
+          <div class="icon-circle">
+            <i class="bi bi-gem"></i>
+          </div>
+          <h5>Your Donations Are Valued</h5>
+          <p>
+            We ensure your donations reach the
+            right beneficiaries.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="why-card">
+          <div class="icon-circle">
+            <i class="bi bi-eye-fill"></i>
+          </div>
+          <h5>Transparent Process</h5>
+          <p>
+            Verified NGOs and real-time tracking
+            for transparency.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="why-card">
+          <div class="icon-circle">
+            <i class="bi bi-gift-fill"></i>
+          </div>
+          <h5>Surprise Rewards</h5>
+          <p>
+            Earn rewards and appreciation
+            for your kindness.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="why-card">
+          <div class="icon-circle">
+            <i class="bi bi-globe2"></i>
+          </div>
+          <h5>Save the Environment</h5>
+          <p>
+            Reduce waste and give clothes
+            a second life.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- CTA -->
+<!-- <section class="cta-section text-center text-white py-5">
+  <div class="container">
+    <h2 class="fw-bold mb-3">Ready to Make an Impact?</h2>
+    <p class="mb-4">Join thousands of donors making a difference today.</p>
+    <a href="register.html" class="btn btn-success btn-lg px-5">
+      Join WearLoop
+    </a>
+  </div>
+</section> -->
+
+<!-- FOOTER -->
+<footer class="footer-section text-white py-5">
+  <div class="container text-center">
+    <h5 class="fw-bold">WearLoop ♻️</h5>
+    <p>Give clothes a second life. Reduce waste. Help people.</p>
+    <hr style="background:rgba(255,255,255,0.3)">
+    <p class="mb-0">© 2026 WearLoop. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Custom JS -->
+<script src="script.js"></script>
+
+<div class="donate-modal" id="donateModal">
+  <div class="modal-content-box">
+    <h4>Start Your Donation</h4>
+    <p>Choose category and schedule pickup.</p>
+    <button onclick="closeModal()" class="btn btn-danger">Close</button>
+  </div>
+</div>
+
+<a href="https://wa.me/919105382905" class="whatsapp-btn" target="_blank">
+  <i class="bi bi-whatsapp"></i>
+</a>
+
+
+</body>
+</html>

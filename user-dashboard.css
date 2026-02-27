@@ -1,0 +1,129 @@
+/* ===== Background ===== */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(-45deg, #ff6b00, #ff9966, #ff5e62, #ff9966);
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ===== Wrapper ===== */
+.dashboard-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* ===== Glass Card ===== */
+.dashboard-card {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(20px);
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  width: 420px;
+  color: white;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+}
+
+/* ===== Profile Circle ===== */
+.profile-circle {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: linear-gradient(90deg, #ff6b00, #ff8c42);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  margin: 0 auto 20px;
+}
+
+/* ===== User Info ===== */
+.user-info p {
+  margin: 8px 0;
+  font-size: 15px;
+}
+
+/* ===== Buttons ===== */
+.dashboard-actions {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.action-btn {
+  background: linear-gradient(90deg, #00b09b, #96c93d);
+  padding: 10px;
+  border-radius: 30px;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.action-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(0,176,155,0.5);
+}
+
+.logout-btn {
+  background: linear-gradient(90deg, #ff6b00, #ff8c42);
+  border: none;
+  padding: 10px;
+  border-radius: 30px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.logout-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(255,107,0,0.6);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 500px) {
+  .dashboard-card {
+    width: 90%;
+    padding: 25px;
+  }
+}
+
+/* ===== Donation Table Section ===== */
+
+.donation-section {
+  margin-top: 40px;
+  text-align: center;
+  color: white;
+}
+
+.donation-section table {
+  width: 80%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(10px);
+}
+
+.donation-section th,
+.donation-section td {
+  padding: 12px;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+.secondary {
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+}

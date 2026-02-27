@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Dashboard - WearLoop</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="user-dashboard.css">
+</head>
+
+<body>
+
+<div class="dashboard-wrapper">
+
+  <div class="dashboard-card">
+
+    <div class="profile-circle">👤</div>
+
+    <h2>Welcome Back 👋</h2>
+
+    <div class="user-info" id="userInfo"></div>
+
+    <div class="dashboard-actions">
+      <a href="donate.html" class="action-btn">Donate Clothes</a>
+      <button onclick="loadDonations()" class="action-btn secondary">My Donations</button>
+      <button onclick="logout()" class="logout-btn">Logout</button>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="donation-section" id="donationSection" style="display:none;">
+  <h3>My Donations</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>Size</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody id="donationTable"></tbody>
+  </table>
+</div>
+
+<script>
+
+const user = JSON.parse(localStorage.getItem("userData"));
+
+if(!user){
+  window.location.href = "login.html";
+}
+
+document.getElementById("userInfo").innerHTML = `
+  <p><strong>Name:</strong> ${user.name}</p>
+  <p><strong>Email:</strong> ${user.email}</p>
+  <p><strong>Mobile:</strong> ${user.mobile}</p>
+`;
+
+function logout(){
+  localStorage.removeItem("userData");
+  window.location.href = "login.html";
+}
+
+async function loadDonations(){
+
+  document.getElementById("donationSection").style.display = "block";
+
+  const response = await fetch(`http://localhost:5000/user-donations/${user.email}`);
+  const donations = await response.json();
+
+  const table = document.getElementById("donationTable");
+  table.innerHTML = "";
+
+  donations.forEach(d => {
+    table.innerHTML += `
+      <tr>
+        <td>${d.category}</td>
+        <td>${d.size}</td>
+        <td>${d.status}</td>
+      </tr>
+    `;
+  });
+
+}
+
+</script>
+
+</body>
+</html>
