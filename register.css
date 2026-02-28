@@ -1,0 +1,142 @@
+/* ===== REGISTER PAGE SAME AS LOGIN ===== */
+
+body.register-body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: url("assets/images/hero2.png") no-repeat center center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar */
+
+.custom-navbar {
+  background: rgba(0,0,0,0.3) !important;
+  backdrop-filter: blur(10px);
+}
+
+/* Overlay section */
+
+.overlay {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+}
+
+/* Register Card */
+/* ===== Compact Height Register Card ===== */
+
+.modal-box {
+  width: 420px;                 /* Width same rakhi */
+  padding: 25px 30px;           /* Top-bottom padding kam */
+  border-radius: 20px;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  color: white;
+  text-align: center;
+  animation: fadeIn 0.6s ease forwards;
+}
+
+/* Fade In */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Headings */
+
+.modal-box h2 {
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  font-size: 14px;
+  margin-bottom: 15px;
+  opacity: 0.8;
+}
+
+/* Inputs */
+
+.input-group {
+  margin-bottom: 12px;
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 8px 5px;
+  border: none;
+  border-bottom: 2px solid white;
+  background: transparent;
+  color: rgb(10, 10, 10);
+  outline: none;
+}
+
+/* Button */
+
+.btn {
+  width: 100%;
+  background: linear-gradient(90deg, #ff6b00);
+  color: white;
+  /* padding: 6px 18px; */
+  padding: 8px;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: 0.3s;
+  margin-top: 10px;
+
+}
+
+.btn:hover {
+  box-shadow: 0 0 15px rgba(255, 115, 0, 0.81);
+  color: black;
+  transform: translateY(-3px);
+}
+
+.btn-nav-login {
+    .btn-nav-register {
+  background: linear-gradient(90deg, #ff6b00);
+  color: white;
+  padding: 6px 18px;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-nav-register:hover {
+  box-shadow: 0 0 15px rgba(255, 115, 0, 0.81);
+  color: black;
+  transform: translateY(-2px);
+}
+}
+
+/* Login link text */
+
+.login-text {
+  margin-top: 20px;
+}
+
+.login-text a {
+  color: hsl(0, 0%, 4%);
+  font-weight: bold;
+}

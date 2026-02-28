@@ -1,0 +1,162 @@
+/* ===== LOGIN PAGE FULL FIX ===== */
+
+body.login-body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: url(assets/images/hero2.png);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar */
+.custom-navbar {
+  background: rgba(0,0,0,0.3) !important;
+  backdrop-filter: blur(10px);
+}
+
+/* Overlay section */
+.overlay {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px; /* space below navbar */
+}
+
+/* Login Card */
+
+.modal-box {
+  width: 380px;
+  padding: 40px 30px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  color: white;
+  text-align: center;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.modal-box {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Headings */
+
+.modal-box h2 {
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 14px;
+  margin-bottom: 25px;
+  opacity: 0.8;
+}
+
+/* Inputs */
+
+.input-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 8px 5px;
+  border: none;
+  border-bottom: 2px solid white;
+  background: transparent;
+  color: rgb(7, 7, 7);
+  outline: none;
+}
+
+/* Button */
+
+.btn {
+  width: 100%;
+  background: linear-gradient(90deg, #ff6b00);
+  color: white;
+  padding: 6px 18px;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  box-shadow: 0 0 15px rgba(255, 115, 0, 0.81);
+  color: black;
+  transform: translateY(-3px);
+}
+
+.btn.loading {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.btn.loading::after {
+  content: " ⏳";
+}
+
+.btn-nav-register {
+  background: linear-gradient(90deg, #ff6b00);
+  color: white;
+  padding: 6px 18px;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-nav-register:hover {
+  box-shadow: 0 0 15px rgba(255, 115, 0, 0.81);
+  color: black;
+  transform: translateY(-2px);
+}
+
+
+/* Register text */
+
+.login-text {
+  margin-top: 20px;
+}
+
+.login-text a {
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Fade Out Animation */
+
+.fade-out {
+  animation: fadeOut 0.6s ease forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
