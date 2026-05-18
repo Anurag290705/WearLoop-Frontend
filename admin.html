@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard - WearLoop</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="admin.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+  <!-- 🔐 Login Protection -->
+  <script>
+    if (localStorage.getItem("adminLoggedIn") !== "true") {
+      window.location.replace("admin-login.html");
+    }
+  </script>
+
+  <div class="dashboard">
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+      <a class="navbar-brand text-white" href="index.html">
+        <span style="color:#ff6b00;">♻</span> Wear<span style="color:#ff6b00;">Loop</span>
+      </a>
+
+      <ul>
+        <li class="active" data-section="dashboard"><i class="bi bi-speedometer2"></i> <span>Dashboard</span></li>
+        <li data-section="donations"><i class="bi bi-box-seam"></i> <span>Donations</span></li>
+        <li data-section="users"><i class="bi bi-people"></i> <span>Users</span></li>
+        <li data-section="ngos"><i class="bi bi-building"></i> <span>NGOs</span></li>
+        <li data-section="settings"><i class="bi bi-gear"></i> <span>Settings</span></li>
+        <li onclick="logout()"><i class="bi bi-box-arrow-right"></i> <span>Logout</span></li>
+      </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+
+      <!-- TOPBAR -->
+      <div class="topbar">
+        <button onclick="toggleSidebar()" class="menu-btn">
+          <i class="bi bi-list"></i>
+        </button>
+
+        <h5>Admin Dashboard</h5>
+
+        <div class="topbar-right">
+
+          <!-- 🔔 Notification -->
+          <div class="notification-wrapper">
+            <i class="bi bi-bell-fill" onclick="toggleNotifications()"></i>
+            <span id="notifyCount" class="notify-badge">0</span>
+
+            <div id="notificationPanel" class="notification-panel">
+              <h6>Notifications</h6>
+              <div id="notificationList"></div>
+            </div>
+          </div>
+
+          <!-- 👤 Profile -->
+          <div class="profile-wrapper">
+            <div class="profile-circle" onclick="toggleProfileMenu()">A</div>
+
+            <div id="profileMenu" class="profile-menu">
+              <p><strong>Admin</strong></p>
+              <hr>
+              <button onclick="toggleTheme()">Toggle Theme</button>
+              <button onclick="logout()">Logout</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ================= DASHBOARD SECTION ================= -->
+      <div id="dashboardSection" class="content-section">
+
+        <div class="row g-4 mt-4">
+
+          <div class="col-md-3">
+            <div class="card-box">
+              <h4 id="totalDonations">0</h4>
+              <p>Total Donations</p>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="card-box">
+              <h4 id="pendingCount">0</h4>
+              <p class="text-warning">Pending</p>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="card-box">
+              <h4 id="approvedCount">0</h4>
+              <p class="text-success">Approved</p>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="card-box">
+              <h4 id="rejectedCount">0</h4>
+              <p class="text-danger">Rejected</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="chart-container mt-5">
+          <h5>Donation Status Overview</h5>
+          <canvas id="donationChart"></canvas>
+        </div>
+
+      </div>
+
+      <!-- ================= DONATIONS SECTION ================= -->
+      <div id="donationsSection" class="content-section" style="display:none;">
+        <h5 class="mt-4">All Donations</h5>
+
+        <table class="table table-bordered mt-3">
+          <thead class="table-dark">
+            <tr>
+              <th>User</th>
+              <th>Category</th>
+              <th>Size</th>
+              <th>Condition</th>
+              <th>Description</th>
+              <th>Images</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="donationTable"></tbody>
+        </table>
+      </div>
+
+      <!-- ================= USERS SECTION ================= -->
+      <div id="usersSection" class="content-section" style="display:none;">
+
+        <h5 class="mt-4">All Users</h5>
+
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <input type="text" id="userSearch" class="form-control" placeholder="Search by name or email...">
+          </div>
+        </div>
+
+        <table class="table table-bordered">
+          <thead class="table-dark">
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Mobile</th>
+              <th>Role</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="usersTable"></tbody>
+        </table>
+
+      </div>
+
+      <!-- ================= NGOs SECTION ================= -->
+      <div id="ngosSection" class="content-section" style="display:none;">
+        <h4 class="mt-4">NGO Section</h4>
+        <p>NGO management coming soon...</p>
+      </div>
+
+      <!-- ================= SETTINGS SECTION ================= -->
+      <div id="settingsSection" class="content-section" style="display:none;">
+        <h4 class="mt-4">Settings Section</h4>
+        <p>Admin settings panel...</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast-container position-fixed top-0 end-0 p-3">
+    <div id="liveToast" class="toast align-items-center text-bg-success border-0">
+      <div class="d-flex">
+        <div class="toast-body" id="toastMessage"></div>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- IMAGE PREVIEW MODAL -->
+
+<div id="imageModal" class="image-modal">
+  <span class="close-modal">&times;</span>
+  <img id="modalImage" class="modal-content">
+</div>
+
+  <script src="admin.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

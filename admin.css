@@ -1,0 +1,367 @@
+/* ================= RESET ================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+
+html, body{
+  height:100%;
+  width:100%;
+}
+
+body{
+  background:#f4f6f9;
+  overflow-x:hidden;
+}
+
+/* ================= DASHBOARD LAYOUT ================= */
+
+.dashboard{
+  display:flex;
+  width:100%;
+  min-height:100vh;
+}
+
+/* ================= SIDEBAR ================= */
+
+.sidebar{
+  width:240px;
+  min-height:100vh;
+  background:#111;
+  color:white;
+  padding:20px;
+  position:fixed;
+  left:0;
+  top:0;
+  bottom:0;
+  transition:all 0.3s ease;
+}
+
+.sidebar.collapsed{
+  width:80px;
+}
+
+/* Logo */
+.sidebar .navbar-brand{
+  display:block;
+  margin-bottom:40px;
+  font-weight:bold;
+  font-size:20px;
+}
+
+/* Sidebar Menu */
+.sidebar ul{
+  list-style:none;
+  padding-left:0;
+}
+
+.sidebar ul li{
+  padding:12px 15px;
+  margin-bottom:10px;
+  border-radius:10px;
+  cursor:pointer;
+  transition:all 0.3s ease;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  white-space:nowrap;
+}
+
+.sidebar ul li i{
+  font-size:18px;
+}
+
+.sidebar ul li:hover{
+  background:#ff6b00;
+}
+
+.sidebar ul li.active{
+  background:#ff6b00;
+}
+
+/* Hide text when collapsed */
+.sidebar.collapsed ul li span{
+  display:none;
+}
+
+.sidebar.collapsed .navbar-brand span{
+  display:none;
+}
+
+/* ================= MAIN CONTENT ================= */
+
+.main-content{
+  margin-left:240px;
+  width:calc(100% - 240px);
+  min-height:100vh;
+  padding:30px;
+  transition:all 0.3s ease;
+}
+
+.sidebar.collapsed ~ .main-content{
+  margin-left:80px;
+  width:calc(100% - 80px);
+}
+
+/* ================= TOPBAR ================= */
+
+.topbar{
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:white;
+  padding:15px 25px;
+  border-radius:20px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.05);
+  margin-bottom:30px;
+}
+
+.menu-btn{
+  border:none;
+  background:none;
+  font-size:22px;
+  cursor:pointer;
+}
+
+/* Right Side */
+.topbar-right{
+  display:flex;
+  align-items:center;
+  gap:25px;
+}
+
+/* ================= NOTIFICATION ================= */
+
+.notification-wrapper{
+  position:relative;
+  cursor:pointer;
+}
+
+.notification-wrapper i{
+  font-size:20px;
+}
+
+.notify-badge{
+  position:absolute;
+  top:-8px;
+  right:-10px;
+  background:red;
+  color:white;
+  font-size:12px;
+  padding:3px 6px;
+  border-radius:50%;
+}
+
+.notification-panel{
+  position:absolute;
+  right:0;
+  top:35px;
+  width:260px;
+  background:white;
+  border-radius:15px;
+  box-shadow:0 15px 30px rgba(0,0,0,0.15);
+  padding:15px;
+  display:none;
+  z-index:1000;
+}
+
+/* ================= PROFILE ================= */
+
+.profile-wrapper{
+  position:relative;
+}
+
+.profile-circle{
+  width:38px;
+  height:38px;
+  background:#ff6b00;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.profile-menu{
+  position:absolute;
+  right:0;
+  top:45px;
+  background:white;
+  width:170px;
+  border-radius:12px;
+  box-shadow:0 15px 30px rgba(0,0,0,0.15);
+  padding:10px;
+  display:none;
+  z-index:1000;
+}
+
+.profile-menu button{
+  width:100%;
+  background:none;
+  border:none;
+  padding:8px;
+  text-align:left;
+  cursor:pointer;
+}
+
+.profile-menu button:hover{
+  background:#f2f2f2;
+}
+
+/* ================= DASHBOARD CARDS ================= */
+
+.card-box{
+  background:white;
+  padding:25px;
+  border-radius:20px;
+  text-align:center;
+  box-shadow:0 15px 30px rgba(0,0,0,0.08);
+  transition:all 0.3s ease;
+}
+
+.card-box:hover{
+  transform:translateY(-6px);
+}
+
+.card-box h4{
+  font-size:28px;
+  font-weight:bold;
+}
+
+.card-box p{
+  margin-top:5px;
+  font-weight:500;
+}
+
+/* ================= CHART ================= */
+
+.chart-container{
+  background:white;
+  padding:25px;
+  border-radius:20px;
+  box-shadow:0 15px 30px rgba(0,0,0,0.08);
+  margin-top:30px;
+}
+
+/* ================= TABLE ================= */
+
+table{
+  background:white;
+  border-radius:15px;
+  overflow:hidden;
+  box-shadow:0 10px 25px rgba(0,0,0,0.05);
+}
+
+table thead{
+  background:#222;
+  color:white;
+}
+
+table tbody tr:hover{
+  background:#f2f2f2;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:768px){
+
+  .sidebar{
+    position:absolute;
+    z-index:999;
+  }
+
+  .main-content{
+    margin-left:80px;
+    width:calc(100% - 80px);
+  }
+
+}
+
+/* ================= DARK MODE ================= */
+
+body.dark-mode{
+  background:#121212;
+  color:white;
+}
+
+body.dark-mode .topbar,
+body.dark-mode .card-box,
+body.dark-mode .chart-container,
+body.dark-mode table{
+  background:#1e1e1e;
+  color:white;
+}
+
+body.dark-mode table thead{
+  background:#000;
+}
+
+/* Donation image */
+
+.donation-img{
+  width:45px;
+  height:45px;
+  object-fit:cover;
+  border-radius:6px;
+  cursor:pointer;
+  margin-right:5px;
+}
+
+/* 🔥 smoother UI */
+.card-box {
+  transition: all 0.25s ease;
+}
+
+.card-box:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+/* better table spacing */
+table td {
+  vertical-align: middle;
+}
+
+/* scrollbar clean */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+/* IMAGE MODAL */
+
+.image-modal{
+  display:none;
+  position:fixed;
+  z-index:9999;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.9);
+  justify-content:center;
+  align-items:center;
+}
+
+.modal-content{
+  max-width:80%;
+  max-height:80%;
+  border-radius:10px;
+}
+
+.close-modal{
+  position:absolute;
+  top:20px;
+  right:35px;
+  color:white;
+  font-size:40px;
+  cursor:pointer;
+}

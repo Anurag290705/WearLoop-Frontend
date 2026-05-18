@@ -1,0 +1,134 @@
+body{
+  background: linear-gradient(135deg,#ff6b00,#ff914d);
+  font-family: Arial;
+  padding-top:80px;
+}
+
+/* ================= NAVBAR ================= */
+
+.custom-navbar {
+  background: rgba(0, 0, 0, 0.4) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  transition: 0.3s ease;
+}
+
+
+.navbar-scrolled {
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  padding: 10px 0;
+}
+
+/* Navbar Links */
+
+.nav-link {
+  position: relative;
+  color: #fff !important;
+  font-weight: 600;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background: #ff6b00;
+  transition: 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Logo */
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 22px;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+}
+
+/* Register Button */
+
+.btn-nav-register {
+  background: linear-gradient(90deg, #ff6b00);
+  color: white;
+  padding: 6px 18px;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-nav-register:hover {
+  box-shadow: 0 0 15px rgba(255, 115, 0, 0.81);
+  transform: translateY(-2px);
+}
+
+/* MAIN BOX */
+.donate-wrapper{
+  background:white;
+  border-radius:20px;
+  padding:40px;
+  box-shadow:0 20px 50px rgba(0,0,0,0.2);
+  margin-top:50px;
+}
+
+/* LEFT */
+.left-side{
+  background: linear-gradient(135deg,#ff6b00,#ff914d);
+  padding:30px;
+  border-radius:20px;
+  color:white;
+}
+
+.left-side img{
+  width:100%;
+  border-radius:15px;
+  margin-top:15px;
+}
+
+.benefits{
+  list-style:none;
+  padding:0;
+}
+
+.benefits li{
+  margin:8px 0;
+}
+
+/* RIGHT */
+.donate-card{
+  padding:20px;
+}
+
+/* BUTTON */
+.btn-submit{
+  background:#ff6b00;
+  color:white;
+  font-weight:600;
+}
+
+.btn-submit:hover{
+  background:#ff8533;
+  transform:translateY(-2px);
+}
+
+/* IMAGE PREVIEW */
+.preview-img{
+  width:100%;
+  max-height:150px;
+  object-fit:cover;
+  border-radius:10px;
+  display:none;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .donate-wrapper{
+    padding:20px;
+  }
+}

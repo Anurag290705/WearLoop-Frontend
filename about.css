@@ -1,0 +1,294 @@
+
+/* ===== RESET =====
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  padding-top: 80px;
+  background: #f5f5f5;
+} */
+
+/* ===== NAVBAR ===== */
+/* .custom-navbar {
+  background: linear-gradient(90deg, #2c2c2c, #8b5a2b);
+  backdrop-filter: blur(10px);
+}
+
+.navbar-brand {
+  font-size: 22px;
+}
+
+.nav-link {
+  color: white !important;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  color: #ff6b00 !important;
+}
+
+/* ===== USER MENU ===== */
+.user-menu {
+  position: relative;
+}
+
+.user-icon {
+  width: 42px;
+  height: 42px;
+  background: #ff6b00;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.user-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+}
+
+/* DROPDOWN */
+.user-dropdown {
+  position: absolute;
+  top: 55px;
+  right: 0;
+  background: white;
+  border-radius: 10px;
+  display: none;
+  min-width: 170px;
+  z-index: 9999;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+.user-dropdown.show {
+  display: block;
+}
+
+.user-dropdown a {
+  display: block;
+  padding: 12px;
+  color: black;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.user-dropdown a:hover {
+  background: #f2f2f2;
+} */
+
+/* ===== HERO SECTION ===== */
+.hero-image {
+  height: 100vh;
+  background: url("assets/images/hero1.png") center/cover no-repeat;
+  position: relative;
+}
+
+.hero-overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content {
+  text-align: center;
+  color: white;
+}
+
+.hero-title {
+  font-size: 60px;
+  font-weight: 700;
+}
+
+.hero-subtitle {
+  font-size: 22px;
+  margin-top: 10px;
+}
+
+/* FLOATING SHAPES */
+.hero-shapes span {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: rgba(255,107,0,0.15);
+  border-radius: 50%;
+  animation: float 8s infinite ease-in-out;
+}
+
+.hero-shapes span:nth-child(1) {
+  top: 10%;
+  left: 5%;
+}
+
+.hero-shapes span:nth-child(2) {
+  bottom: 15%;
+  right: 10%;
+}
+
+.hero-shapes span:nth-child(3) {
+  top: 40%;
+  right: 20%;
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-25px); }
+}
+
+/* ===== MISSION ===== */
+.why-donate {
+  padding: 100px 0;
+  background: #f8f9fa;
+}
+
+.section-title {
+  font-size: 32px;
+  text-align: center;
+}
+
+.section-title::after {
+  content: "";
+  width: 80px;
+  height: 3px;
+  background: #ff6b00;
+  display: block;
+  margin: 10px auto;
+}
+
+.why-card {
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* ===== FEATURES ===== */
+.features-section {
+  background: #f1f1f1;
+}
+
+.feature-card {
+  border-radius: 15px;
+  background: white;
+  transition: 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+/* ===== IMPACT ===== */
+.progress-section {
+  background: white;
+  padding: 80px 0;
+}
+
+.progress-section h1 {
+  font-size: 45px;
+}
+
+.progress-section p {
+  color: gray;
+}
+
+/* ===== BUTTON ===== */
+.learn-btn {
+  padding: 12px 25px;
+  border-radius: 30px;
+  background: linear-gradient(90deg,#ff6b00,#ff8c42);
+  color: white;
+  text-decoration: none;
+}
+
+.learn-btn:hover {
+  transform: translateY(-3px);
+  color: black;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background: #111;
+  color: white;
+  padding: 50px 20px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-col {
+  width: 22%;
+}
+
+.footer-col h4 {
+  margin-bottom: 15px;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin: 8px 0;
+}
+
+.footer-col ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-col ul li a:hover {
+  color: #ff6b00;
+}
+
+/* SOCIAL */
+.social-icons a {
+  margin-right: 10px;
+  color: white;
+  font-size: 18px;
+}
+
+/* NEWSLETTER */
+.newsletter input {
+  padding: 8px;
+  border: none;
+}
+
+.newsletter button {
+  padding: 8px;
+  background: #ff6b00;
+  border: none;
+  color: white;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+  }
+
+  .footer-col {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .hero-title {
+    font-size: 35px;
+  }
+}
